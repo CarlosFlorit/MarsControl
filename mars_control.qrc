@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>mars_control_text.png</file>
+  </qresource>
+  <qresource prefix="newPrefix">
+    <file>rover_curiosity_3.png</file>
+  </qresource>
+</RCC>
