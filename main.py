@@ -17,6 +17,8 @@ from rover import Ui_MainWindow
 #Crea el log
 logging.basicConfig(filename='mars_log.log', format='%(asctime)s : %(levelname)s : %(message)s', datefmt='%d/%m/%y %H:%M:%S', filemode='w')
 
+#No tenía muy claro cómo crear el log. Revisé la documentación de Python (logging) y la siguiente página:
+#https://www.franciscofiguerez.es/python/logging-creando-logs-con-python/
 
 
 class Ventana(QMainWindow, Ui_MainWindow):
@@ -80,6 +82,16 @@ class Ventana(QMainWindow, Ui_MainWindow):
             #pasamos la url como string
             urlPic = (self.data['photos'][0]['img_src'])
 
+            #Encontré problemas para visualizar la imagen, ya que el JSON de la API nos proporciona un enlace a la imagen
+            #Después de probar numerosas opciones (varias de ellas deprecated), encontré una que funcionaba:
+            #https://stackoverflow.com/questions/13137817/how-to-download-image-using-requests
+            #266
+            
+            
+            
+            
+            
+            
             #obtenemos la imagen a partir de la url
             response = requests.get(urlPic, stream=True)
             with open('my_image.png', 'wb') as file:
